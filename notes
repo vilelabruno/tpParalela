@@ -1,0 +1,14 @@
+cmake --config ./ # to generate MakeFile
+cmake --build ./ # to build
+mpirun -np 8 -host master,master,master,master,client2,client2,client2,client2 ./tpParalela ../imagens/ 1000 1000 # to run
+
+# files to exclude :
+- CMakeCache
+- MakeFile
+
+
+# todo:
+-cmake clean
+-rename files
+-make report
+-understand files

@@ -1,0 +1,648 @@
+    1  mkdir cloud
+    2  ll
+    3  ssh-keygen -t rsa
+    4  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client2
+    5  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client3
+    6  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client4
+    7  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client5
+    8  eval `ssh-agent`
+    9  ssh-add ~/.ssh/id_rsa
+   10  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client6
+   11  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client7
+   12  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client8
+   13  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client9
+   14  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client10
+   15  ssh client10
+   16  cd cloud/
+   17  pwd
+   18  cd cloud/
+   19  ls -l
+   20  mpicc mpi1.c -o mpi1
+   21  ls -l
+   22  mpirun -np 20 --host master,client2,client3 mpi1
+   23  mpirun -np 2 --host master,client2,client3 mpi1
+   24  mpirun -np 3 --host master,client2,client3 mpi1
+   25  mpirun -np 4 --host master,client2,client3 mpi1
+   26  mpirun -np 4 --host master,client2,client3,client4 mpi1
+   27  mpirun -np 5 --host master,client2,client3,client4 mpi1
+   28  mpirun -np 5 --host master,client2,client3,client4,client10 mpi1
+   29  mpirun -np 5 --host master,client2,client3,client4,client10,client9 mpi1
+   30  mpirun -np 5 --host master,client2,client3,client4,client10,client9,client8,client7,client6 mpi1
+   31  mpirun -np 8 --host master,client2,client3,client4,client10,client9,client8,client7,client6 mpi1
+   32  mpirun -np 20 --host master,client2,client3,client4,client10,client9,client8,client7,client6 mpi1
+   33  mpirun -np 9 --host master,client2,client3,client4,client10,client9,client8,client7,client6 mpi1
+   34  mpirun -np 10 --host master,client2,client3,client4,client5,client10,client9,client8,client7,client6 mpi1
+   35  mpirun -np 11 --host master,client2,client3,client4,client5,client10,client9,client8,client7,client6 mpi1
+   36  ls
+   37  cd ..
+   38  ls
+   39  cd mpiuser/
+   40  ls
+   41  cd cloud
+   42  ls
+   43  mkdir a16019
+   44  ls
+   45  cat mpi1.c
+   46  ls -la
+   47  cd a16019
+   48  ls
+   49  ls -la
+   50  cd ..
+   51  ls -la
+   52  mpiexec --version
+   53  cd a16019/
+   54  ls
+   55  mpicc aula1.c -o aula1
+   56  ls
+   57  ./aula1
+   58  mpirun -np 4 ./aula1
+   59  mpicc aula1.c -o aula1
+   60  mpirun -np 10 ./aula1
+   61  mpicc aula1.c -o aula1
+   62  mpirun -np 4 -hosts master, client2, client3, client4 ./aula1
+   63  mpirun -np 4 -host master,client2,client3,client4 ./aula1
+   64  mpirun -np 6 -host master,client2,client3,client4 ./aula1
+   65  mpirun -np 8 -host master,client2,client3,client4 ./aula1
+   66  mpirun -np 6 -host master,client2,client3,client4,client5,client6 ./aula1
+   67  mpirun -np 6 -host master,client2,client2,client2,client2,client2 ./aula1
+   68  mpirun -np 26 -host master,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2 ./aula1
+   69  mpirun -np 26 -host master,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2 ./aula1
+   70  mpicc aula1.c -o aula1
+   71  mpirun -np 26 -host master,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2,client2 ./aula1
+   72  mpirun -np 26 -f hostfile ./aula1
+   73  mpirun -np 4 -f hostfile ./aula1
+   74  mpirun -np 4 -hostfile hostfile ./aula1
+   75  mpicc aula1.c -o aula1
+   76  mpicc aula2.c -o aula2
+   77  mpirun -np 10 -hostfile hostfile ./aula2
+   78  mpirun -np 30 -hostfile hostfile ./aula2
+   79  mpirun -np 10 -hostfile hostfile ./aula2
+   80  ls
+   81  cd cloud/
+   82  ls
+   83  cd a16019
+   84  ls
+   85  mpicc aula2.c -o aula2
+   86  mpirun -np 5 -hostfile hostfile ./aula2
+   87  mpicc aula2.c -o aula2
+   88  mpirun -np 5 -hostfile hostfile ./aula2
+   89  mpicc aula2.c -o aula2
+   90  mpirun -np 5 -hostfile hostfile ./aula2
+   91  mpicc aula2.c -o aula2
+   92  mpirun -np 5 -hostfile hostfile ./aula2
+   93  mpicc aula2.c -o aula2
+   94  mpirun -np 5 -hostfile hostfile ./aula2
+   95  mpicc aula2.c -o aula2
+   96  mpirun -np 5 -hostfile hostfile ./aula2
+   97  mpicc aula2.c -o aula2
+   98  mpirun -np 5 -hostfile hostfile ./aula2
+   99  mpicc aula2.c -o aula2
+  100  mpirun -np 5 -hostfile hostfile ./aula2
+  101  cd ~/cloud/josetobias/parallel_matrix_operation/
+  102  ls
+  103  cmake ./
+  104  mpirun -np 4 ./parallel_matrix_operation
+  105  ls
+  106  mpirun -np 4 ./parallel_matrix_operation
+  107  mpirun -np 4 ./parallel_matrix_operation images/stanford.pgm 8
+  108  cmake ./
+  109  mpirun -np 4 ./parallel_matrix_operation images/stanford.pgm 8
+  110  cmake ./
+  111  mpirun -np 4 ./parallel_matrix_operation images/stanford.pgm
+  112  mpirun -np 4 ./parallel_matrix_operation ./images/stanford.pgm
+  113  mpirun -np 1 ./parallel_matrix_operation ./images/stanford.pgm
+  114  mpirun -np 4 ./parallel_matrix_operation ./images/stanford.pgm
+  115  mpiexec -np 4 ./parallel_matrix_operation ./images/stanford.pgm
+  116  ls -l
+  117  cd images/
+  118  ls -l
+  119  cd ..
+  120  cmake ./
+  121  mpiexec -np 4 ./parallel_matrix_operation ./images/stanford.pgm
+  122  cmake --build
+  123  cmake --build ./
+  124  mpirun -np4 parallel_matrix_operation images/stanford.pgm 
+  125  mpirun -n 4 parallel_matrix_operation images/stanford.pgm 
+  126  cmake --build ./
+  127  mpirun -n 4 parallel_matrix_operation images/stanford.pgm 
+  128  cd Documents/
+  129  ls
+  130  vim main.c
+  131  ls
+  132  mpicc main.c -o exec
+  133  çs
+  134  ls
+  135  cp image_handle/image_handle.h ./
+  136  ls
+  137  mpicc main.c -o exec
+  138  cp image_handle/image_handle.c ./
+  139  ls
+  140  mpicc main.c -o exec
+  141  mpicc main.c -o exec -l image_handle.h
+  142  gcc 
+  143  mpicc main.c -o exec -o image_handle.h
+  144  ar ruv image_handle.h image_handle.o
+  145  ar rcs image_handle.h image_handle.o
+  146  ar image_handle.h image_handle.o
+  147  ar rcs image_handle.c image_handle.o
+  148  gcc image_handle.c -o image_handle.o
+  149  ls
+  150  cd ../cloud/
+  151  ls
+  152  cd josetobias/
+  153  ls
+  154  cmake ./
+  155  ls
+  156  cd parallel_matrix_operation/
+  157  ls
+  158  cmake ./
+  159  vim CMakeCache.txt 
+  160  rm -rf CMakeCache.txt 
+  161  cmake ./
+  162  ls
+  163  mpirun -np 4 ./parallel_matrix_operation
+  164  mpirun -np 4 parallel_matrix_operation
+  165  vim main.c 
+  166  mpirun -np 4 -hosts host1,host2,host3,host4 parallel_matrix_operation
+  167  mpirun -np 4 -host host1,host2,host3,host4 parallel_matrix_operation
+  168  mpirun -np 4 parallel_matrix_operation
+  169  mpiexec -np 4 parallel_matrix_operation
+  170  /usr/bin/mpirun -np 4 parallel_matrix_operation
+  171  vim main.c 
+  172  cmake ./
+  173  /usr/bin/mpirun -np 4 parallel_matrix_operation
+  174  vim main.c 
+  175  cmake ./
+  176  /usr/bin/mpirun -np 4 parallel_matrix_operation
+  177  vim main.c 
+  178  cmake ./
+  179  vim main.c 
+  180  cmake clean
+  181  cmake --build 
+  182  cmake --build ./
+  183  vim mainc
+  184  vim main.c 
+  185  cd .ssh
+  186  ssh-copy-id -i id_rsa.pub mpiuser@client10
+  187  cd ..
+  188  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client10
+  189  ls -la .ssh/
+  190  ssh-copy-id -i ~/.ssh/id_rsa.pub mpiuser@client11
+  191  ipconfig
+  192  netstat
+  193  netcat 
+  194  ip
+  195  cd /home/2016.1.08.007/
+  196  ls
+  197  cd Downloads/
+  198  ls
+  199  cd ..
+  200  cd Documents/
+  201  ls
+  202  cd ~/Downloads/
+  203  ls
+  204  cd parallel_counting_stars/
+  205  ls
+  206  cmake --config ./build
+  207  mkdir build
+  208  cmake --config ./build
+  209  ls
+  210  cmake --config ./
+  211  cd build/
+  212  ls
+  213  cmake build ../
+  214  ls
+  215  cd ..
+  216  cmake --build ./
+  217  cmake --config ./
+  218  ls
+  219  cmake --config ./
+  220  ls
+  221  cmake --build ./
+  222  ls
+  223  mpirun --np 10 ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  224  mpirun --np 10 ./pa--host host1,host2,host3 ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  225  mpirun --np 10 ./pa--hosts host1,host2,host3 ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  226  mpirun --np 10 --host host1,host2,host3 ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  227  mpirun --np 10 --host ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  228  mpirun --np 10 ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  229  ls
+  230  vim hostfile
+  231  ls
+  232  mpirun --np 10 --hostfile hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  233  ls
+  234  vim hostfile 
+  235  mpirun --np 10 --hostfile hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  236  mpirun --np 10 --hostfile ./hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  237  vim hostfile 
+  238  mpirun --np 10 --hostfile ./hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  239  vim hostfile 
+  240  mpirun --np 10 --hostfile ./hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  241  mpirun --np 10 --hostfile hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  242  vim hostfile 
+  243  mpirun --np 10 --hostfile hostfile ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  244  mpirun --np 4 ./parallel_counting_stars ../../cloud/imagens\ 1GB/ 2000 2000
+  245  ifconfig
+  246  htop
+  247  gcc chuchu.c -o chuuhc
+  248  print cu
+  249  printf cu
+  250  printf "rola rola rola \n
+  251  "
+  252  printf "chupa minha grossa rola \n\n\n"
+  253  printf "binariza meu piru"
+  254  printf "apagar \n"
+  255  printf "aqui é o glauco geraldinho \n"
+  256  "suicidio.exe\n"
+  257  printf " ____________________██████
+  258  _________▓▓▓▓____█████████
+  259  __ Ƹ̵̡Ӝ̵̨̄Ʒ▓▓▓▓▓=▓____▓=▓▓▓▓▓
+  260  __ ▓▓▓_▓▓▓▓░●____●░░▓▓▓▓
+  261  _▓▓▓▓_▓▓▓▓▓░░__░░░░▓▓▓▓
+  262  _ ▓▓▓▓_▓▓▓▓░░♥__♥░░░▓▓▓
+  263  __ ▓▓▓___▓▓░░_____░░░▓▓
+  264  ▓▓▓▓▓____▓░░_____░░▓
+  265  _ ▓▓____ ▒▓▒▓▒___ ████
+  266  _______ ▒▓▒▓▒▓▒_ ██████
+  267  _______▒▓▒▓▒▓▒ ████████
+  268  _____ ▒▓▒▓▒▓▒_██████ ███
+  269  _ ___▒▓▒▓▒▓▒__██████ _███
+  270  _▓▓X▓▓▓▓▓▓▓__██████_ ███
+  271  ▓▓_██████▓▓__██████_ ███
+  272  ▓_███████▓▓__██████_ ███
+  273  _████████▓▓__██████ _███
+  274  _████████▓▓__▓▓▓▓▓▓_▒▒
+  275  _████████▓▓__▓▓▓▓▓▓
+  276  _████████▓▓__▓▓▓▓▓▓
+  277  __████████▓___▓▓▓▓▓▓
+  278  _______▒▒▒▒▒____▓▓▓▓▓▓
+  279  _______▒▒▒▒▒ _____▓▓▓▓▓
+  280  _______▒▒▒▒▒_____ ▓▓▓▓▓
+  281  _______▒▒▒▒▒ _____▓▓▓▓▓
+  282  ________▒▒▒▒______▓▓▓▓▓
+  283  ________█████____█████
+  284  _'▀█║────────────▄▄───────────​─▄──▄_
+  285  ──█║───────▄─▄─█▄▄█║──────▄▄──​█║─█║
+  286  ──█║───▄▄──█║█║█║─▄║▄──▄║█║─█║​█║▄█║
+  287  ──█║──█║─█║█║█║─▀▀──█║─█║█║─█║​─▀─▀
+  288  ──█║▄║█║─█║─▀───────█║▄█║─▀▀
+  289  ──▀▀▀──▀▀────────────▀─█║
+  290  ───────▄▄─▄▄▀▀▄▀▀▄──▀▄▄▀
+  291  ──────███████───▄▀
+  292  ──────▀█████▀▀▄▀
+  293  ────────▀█▀
+  294  "
+  295  png
+  296  printf "                      **####################################****..                                  
+  297                        **########################################**                                  
+  298                        **##################****####################..                                
+  299                        **######################################**##**                                
+  300                        ######################################****##**                                
+  301                      ..##########**********............******####****..                              
+  302                      ..##****..**************............**  ..******..                              
+  303                      **..........************..........**##......  ..**                              
+  304                      ............****************........**....****  ..                              
+  305                        ..............********************##**..    ..                                
+  306                      ..........******############################******..........                    
+  307                        ....**####################################################**                  
+  308                        **##########################################**############**                  
+  309                    ..##############################################****##########                    
+  310                ..##################************######################**########**....                
+  311            ..######################**....********##############################**##**                
+  312          **################**######**....**********############################**##**                
+  313        ################****######**........**********##########**##################**                
+  314      ..################******##**..........**********##########**##**################..              
+  315      ..##############**    ..  ..  ....****##########################################**              
+  316        **##############        ......**####**************##############**############**..            
+  317          **############      ..****######****######**..**############**####**########**..            
+  318              ##########..**####************..******....**##################**##########..            
+  319              **########****####**..******..............****############################..            
+  320                ########**##**##..  ..**......    ....******##########################**              
+  321                **######........    ..**....  ........****############****##########**....            
+  322                ########**          ..........    ..******############################..              
+  323                ########**          ..........  ....********######**##################..              
+  324                **########          ....****......************########################..              
+  325                  ########**    ..  ......****......************##**##**##############..              
+  326                  **########..    ..**####****......************##**##****############                
+  327                  ..########**......**##..**........****************##****##########..                
+  328                      **######....      ..............****************..  ..####..                    
+  329                        **####..        ******##****..****************..    ..**  **                  
+  330                          ..**##..  ****##********************..******..    **..  ****                
+  331                            ..****..**    ..**********..........####**..    **    ****..              
+  332                              ..##........**##******....  ....**##****..  **..  ..##****..            
+  333                                ........****................**####**....****..  **##******..          
+  334                                      ....    ..............####****..******....####****##****..      
+  335                                          ..............**######**..******....**##############****....
+  336                                        ....**********##########**************######################**
+  337                                          ..**##****..**######**..****..******########################
+  338                                                  ##....********************##########################
+  339                                                ..####..********************##########################
+  340                                                **####**..****************############################
+  341                                              ..**######........**********############################
+  342                                          ..****##############....******##############################
+  343                                        ..####..**##########**    ******##############################
+  344  "
+  345  cd ~/cloud/
+  346  ls
+  347  cd josetobias/
+  348  ls
+  349  cd parallel_counting_stars/
+  350  cd cmake-build-debug/
+  351  cmake --build ./
+  352  mpirun --np 10 ./parallel_counting_stars ../../images/ 2000 2000
+  353  cd ~/Downloads/
+  354  ls
+  355  cd JoséTobias-2016.1.08.007/
+  356  ls
+  357  vim mosaic.c 
+  358  vim count.c 
+  359  ls
+  360  cmake 
+  361  vim Makefile 
+  362  make mosaic 
+  363  ls
+  364  vim config.txt
+  365  make mosaic 
+  366  ./mosaic
+  367  ls
+  368  ./mosaic
+  369  eog mosaic.pgm 
+  370  cd Downloads/
+  371  cd JoséTobias-2016.1.08.007/
+  372  ls
+  373  make limpa 
+  374  ls
+  375  make limpa 
+  376  çls
+  377  ls
+  378  htop
+  379  cat /proc/cpuinfo 
+  380  exit
+  381  cd ~/cloud/
+  382  ls
+  383  cd josetobias/
+  384  ls
+  385  cd parallel_counting_stars/
+  386  ls
+  387  cmake --clean ./
+  388  cd cmake-build-debug/
+  389  ls
+  390  cmake --build ./
+  391  rm -rf ./**
+  392  ls
+  393  cmake --config ./
+  394  cmake --config ../
+  395  ls
+  396  cd ..
+  397  ls
+  398  rm -rf CMakeCache.txt 
+  399  rm -rf CMakeFiles/
+  400  rm -rf Makefile 
+  401  rm -rf cmake_install.cmake 
+  402  ls
+  403  rm -rf cmake-build-debug/
+  404  cmake --config ./build/
+  405  mkdir build
+  406  cmake --config ./build/
+  407  cmake --config ./
+  408  ls
+  409  cmake --build ./
+  410  mpirun -np10 -host client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  411  mpirun -np 10 -host client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  412  mpirun -np 8 -host client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  413  mpirun -np 3 -host client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  414  mpirun -np 3 -host client1,client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  415  mpirun -np 3 -host master,client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  416  mpirun -np 4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  417  mpirun -np 4 -host master,client2,client2,client3,client4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  418  ls
+  419  cmake --build ./
+  420  mpirun -np 4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  421  vim main.c
+  422  vim CMakeLists.txt 
+  423  cmake --build ./
+  424  cmake --config ./
+  425  cmake --build ./
+  426  mpirun -np 4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  427  cd ~/cloud/
+  428  ls
+  429  cd josetobias/
+  430  ls
+  431  cd parallel_counting_stars/
+  432  ls
+  433  cd build/
+  434  cmake --build ./
+  435  rm -rf ./**
+  436  cmake --config ./
+  437  cmake --config ../
+  438  ls
+  439  cmake --build ./
+  440  mpirun -np 4 ./parallel_counting_stars ../../imagens\ 1GB/ 1000 1000
+  441  mpirun -np 4 ./parallel_counting_stars ../../../imagens\ 1GB/ 1000 1000
+  442  mpirun -np 4 ./8 master,master,master,master,client2,client2,client2,client2 ./parallel_counting_stars ../../../imagens\ 1GB/ 1000 1000
+  443  mpirun -np 8 -host master,master,master,master,client2,client2,client2,client2 ./parallel_counting_stars ../../../imagens\ 1GB/ 1000 1000
+  444  htop
+  445  cd /etc/ssh/
+  446  ls
+  447  vim sshd_config 
+  448  ssh -p 3325 search@192.168.11.105
+  449  cd ~/cloud/jose/parallel_counting_stars/
+  450  ls
+  451  cd time_analysis/
+  452  ls
+  453  vim executor.sh 
+  454  vim hostfile 
+  455  exit
+  456  cd ~/cloud/
+  457  ls
+  458  cd jose/
+  459  ls
+  460  cd parallel_counting_stars/
+  461  ls
+  462  cd time_analysis/
+  463  ls
+  464  vim executor.sh 
+  465  ls
+  466  chamod +x executor.sh 
+  467  ls
+  468  sh executor.sh
+  469  ls
+  470  vim executor.sh 
+  471  sh executor.sh 
+  472  vim executor.sh 
+  473  sh executor.sh 
+  474  vim executor.sh 
+  475  vim hostfile 
+  476  vim executor.sh 
+  477  sh executor.sh 
+  478  htop
+  479  cd ~/cloud/
+  480  cd jose/
+  481  ls
+  482  cd parallel_counting_stars/
+  483  ls
+  484  cd cmake-build-debug/
+  485  cmake --clean ./
+  486  cd ..
+  487  ls
+  488  cmake --clean ./
+  489  vim CMakeLists.txt 
+  490  cmake --clean ./
+  491  cd cmake-build-debug/
+  492  ls
+  493  cmake --config ./
+  494  cd ..
+  495  ls
+  496  rm -rf cmake-build-debug/
+  497  ls
+  498  mkdir build
+  499  cd build/
+  500  cmake --config ./
+  501  cd ..
+  502  cmake --config ./build/
+  503  cd build/
+  504  cmake --config ../
+  505  ls
+  506  cd ..
+  507  ls
+  508  cmake --build ./
+  509  ls
+  510  cd time_analysis/
+  511  ls
+  512  vim hostfile 
+  513  cd ..
+  514  ls
+  515  cd ..
+  516  ls
+  517  cd ..
+  518  ls
+  519  cd imagens\ 1GB/
+  520  cd ..
+  521  cd jose/
+  522  cd parallel_counting_stars/
+  523  cd ..
+  524  cd imagens\ 1GB/
+  525  pwd
+  526  ls
+  527  cd ..
+  528  ls
+  529  mv imagens\ 1GB/ ./imagens/
+  530  ls
+  531  htop
+  532  cd ~/cloud/jose/parallel_counting_stars/
+  533  ls
+  534  cd time_analysis/
+  535  ls
+  536  mpirun --use-hwthread-cpus --np 20 --hostfile hostfile ../parallel_counting_stars /home/mpiuser/cloud/imagens 500 500
+  537  vim hostfile 
+  538  htop
+  539  ls
+  540  exit
+  541  ls
+  542  cp parallel_counting_stars ~/cloud/
+  543  cd ~/cloud/
+  544  ls
+  545  exit
+  546  ls
+  547  rm -rf parallel_counting_stars 
+  548  rm -rf ~/cloud/parallel_counting_stars 
+  549  cp sequential_counting_stars ~/cloud/
+  550  cd ~/cloud/
+  551  ls
+  552  ./sequential_counting_stars ./imagens/
+  553  htop
+  554  time ./sequential_counting_stars ./imagens/
+  555  htop
+  556  ls
+  557  cp sequential_counting_stars ../
+  558  cd ..
+  559  ls
+  560  time ./sequential_counting_stars ./imagens/
+  561  time ./sequential_counting_stars ./cloud/imagens/
+  562  exit
+  563  cd ~/cloud/
+  564  ls
+  565  rm -rf sequential_counting_stars 
+  566  ls
+  567  exit
+  568  cd ~/Documents/
+  569  ls
+  570  cd ..
+  571  cd Downloads/
+  572  ls
+  573  cd /tmp/
+  574  ls
+  575  cd ..
+  576  cd /bin/
+  577  ls
+  578  cd ..
+  579  ls
+  580  cd media/
+  581  ls
+  582  cd mpiuser/
+  583  ls
+  584  cd /home/
+  585  ls
+  586  cd ~/cloud/
+  587  ls
+  588  cd pedro_kiyuna/
+  589  ls
+  590  mpiexec main.c -o main1
+  591  mpicc main.c -o main1
+  592  mpcc main.c -o main1
+  593  mpicc Main.c -o main1
+  594  mpirun -np 10 ./main1
+  595  mpirun -np 10 -host master ./main1
+  596  mpirun -np 5 -host master ./main1
+  597  mpirun -np 4 -host master ./main1
+  598  mpirun -np 2 -host master ./main1
+  599  pirun -np 3 -host master,client2,client3 ./main1
+  600  mpirun -np 3 -host master,client2,client3 ./main1
+  601  pirun -np 2 -host master,client2 ./main1
+  602  mpirun -np 2 -host master,client2 ./main1
+  603  mpicc Main.c -o main1
+  604  mpirun -np 2 -host master ./main1
+  605  mpirun -np 1 -host master ./main1
+  606  mpirun -np 2 -hostfile hostfile ./main1
+  607  mpicc Main.c -o main1
+  608  mpirun -np 5 -hostfile hostfile ./main1
+  609  mpirun -np 4 -hostfile hostfile ./main1
+  610  mpirun -np 2 -hostfile hostfile ./main1
+  611  mpicc Main.c -o main1
+  612  mpirun -np 2 -hostfile hostfile ./main1
+  613  mpirun -np 2 -h3 -hostfile hostfile ./main1
+  614  mpirun -np 3 -hostfile hostfile ./main1
+  615  mpicc Main.c -o main1
+  616  mpirun -np 3 -hostfile hostfile ./main1
+  617  mpicc Main.c -o main1
+  618  mpirun -np 3 -hostfile hostfile ./main1
+  619  mpicc Main.c -o main1
+  620  mpirun -np 3 -hostfile hostfile ./main1
+  621  mpicc Main.c -o main1
+  622  mpirun -np 3 -hostfile hostfile ./main1
+  623  mpicc Main.c -o main1
+  624  mpirun -np 3 -hostfile hostfile ./main1
+  625  mpicc Main.c -o main1
+  626  mpirun -np 3 -hostfile hostfile ./main1
+  627  mpicc Main.c -o main1
+  628  mpirun -np 3 -hostfile hostfile ./main1
+  629  mpicc Main.c -o main1
+  630  mpirun -np 3 -hostfile hostfile ./main1
+  631  mpicc Main.c -o main1
+  632  mpirun -np 6 -hostfile hostfile ./main1
+  633  mpicc Main.c -o main1
+  634  mpirun -np 6 -hostfile hostfile ./main1
+  635  pirun -np 5 -hostfile hostfile ./main1
+  636  mpirun -np 5 -hostfile hostfile ./main1
+  637  mpirun -np 4 -hostfile hostfile ./main1
+  638  mpicc Main.c -o main1
+  639  mpirun -np 4 -hostfile hostfile ./main1
+  640  mpicc Main.c -o main1
+  641  mpirun -np 4 -hostfile hostfile ./main1
+  642  pirun -np 2 -hostfile hostfile ./main1
+  643  mpirun -np 2 -hostfile hostfile ./main1
+  644  mpirun -np 6 -hostfile hostfile ./main1
+  645  mpirun -np 4 -hostfile hostfile ./main1
+  646  history
+  647  cat history > h.txt
+  648  history > h.txt

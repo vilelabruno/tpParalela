@@ -1,0 +1,1 @@
+mpicc -fopenmp  -rdynamic CMakeFiles/tpParalela.dir/main.c.o CMakeFiles/tpParalela.dir/q.c.o CMakeFiles/tpParalela.dir/count.c.o CMakeFiles/tpParalela.dir/lk.c.o  -o tpParalela -lpng -lm 
