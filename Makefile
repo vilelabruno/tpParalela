@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mpiuser/cloud/a16042/tpParalela
+CMAKE_SOURCE_DIR = /mnt/d/dev/tpParalela
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mpiuser/cloud/a16042/tpParalela
+CMAKE_BINARY_DIR = /mnt/d/dev/tpParalela
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mpiuser/cloud/a16042/tpParalela/CMakeFiles /home/mpiuser/cloud/a16042/tpParalela/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/dev/tpParalela/CMakeFiles /mnt/d/dev/tpParalela/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mpiuser/cloud/a16042/tpParalela/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/dev/tpParalela/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,60 +123,6 @@ tpParalela/fast:
 	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/build
 .PHONY : tpParalela/fast
 
-count.o: count.c.o
-
-.PHONY : count.o
-
-# target to build an object file
-count.c.o:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/count.c.o
-.PHONY : count.c.o
-
-count.i: count.c.i
-
-.PHONY : count.i
-
-# target to preprocess a source file
-count.c.i:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/count.c.i
-.PHONY : count.c.i
-
-count.s: count.c.s
-
-.PHONY : count.s
-
-# target to generate assembly for a file
-count.c.s:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/count.c.s
-.PHONY : count.c.s
-
-lk.o: lk.c.o
-
-.PHONY : lk.o
-
-# target to build an object file
-lk.c.o:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/lk.c.o
-.PHONY : lk.c.o
-
-lk.i: lk.c.i
-
-.PHONY : lk.i
-
-# target to preprocess a source file
-lk.c.i:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/lk.c.i
-.PHONY : lk.c.i
-
-lk.s: lk.c.s
-
-.PHONY : lk.s
-
-# target to generate assembly for a file
-lk.c.s:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/lk.c.s
-.PHONY : lk.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -204,33 +150,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/main.c.s
 .PHONY : main.c.s
 
-q.o: q.c.o
-
-.PHONY : q.o
-
-# target to build an object file
-q.c.o:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/q.c.o
-.PHONY : q.c.o
-
-q.i: q.c.i
-
-.PHONY : q.i
-
-# target to preprocess a source file
-q.c.i:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/q.c.i
-.PHONY : q.c.i
-
-q.s: q.c.s
-
-.PHONY : q.s
-
-# target to generate assembly for a file
-q.c.s:
-	$(MAKE) -f CMakeFiles/tpParalela.dir/build.make CMakeFiles/tpParalela.dir/q.c.s
-.PHONY : q.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,18 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... tpParalela"
 	@echo "... edit_cache"
-	@echo "... count.o"
-	@echo "... count.i"
-	@echo "... count.s"
-	@echo "... lk.o"
-	@echo "... lk.i"
-	@echo "... lk.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... q.o"
-	@echo "... q.i"
-	@echo "... q.s"
 .PHONY : help
 
 

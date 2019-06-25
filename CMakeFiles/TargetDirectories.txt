@@ -1,3 +1,0 @@
-/home/mpiuser/cloud/a16042/tpParalela/CMakeFiles/rebuild_cache.dir
-/home/mpiuser/cloud/a16042/tpParalela/CMakeFiles/tpParalela.dir
-/home/mpiuser/cloud/a16042/tpParalela/CMakeFiles/edit_cache.dir
