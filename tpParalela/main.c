@@ -163,7 +163,7 @@ void transGray(png_byte *row_pointers, image binary_comps) {
     for (int y = 0; y < binary_comps.dim_y; y++) {
         for (int x = 0; x < binary_comps.dim_x; x++) {
             png_byte *px = &(row_pointers[(y * binary_comps.dim_x * 3 + x * 3)]);
-            binary_comps.pixels[y][x].value = (0.3 * px[0]) + (0.59 * px[1]) + (0.1 * px[2]); // make sure that it doenst change anything
+            binary_comps.pixels[y][x].value = (0.3 * px[0]) + (0.59 * px[1]) + (0.1 * px[2]); 
             binary_comps.pixels[y][x].label = -1;
             binary_comps.pixels[y][x].y = y;
             binary_comps.pixels[y][x].x = x;
@@ -350,7 +350,7 @@ int main(int argc, char **argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &wr);
 
     if (wr == 0) { //if is this the main computer
-        char *pathDir = "../imagens_paralela/";
+        char *pathDir = "../imagens/";
         DIR *dir = opendir(pathDir);
         struct dirent *sd;
 
